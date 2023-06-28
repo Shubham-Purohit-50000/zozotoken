@@ -1,0 +1,210 @@
+body{
+    overflow-x: hidden !important;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+}
+footer{
+    background-color: #141415;
+}
+.bg-white {
+    background-color: #a2262e !important;
+  }
+
+.btn-primary{
+    background-color: #a2262e;
+    border-color: #141415;
+}
+
+.btn-outline-primary:hover {
+    background-color: #141415;
+    border-color: #141415;
+}
+
+.btn-primary:hover {
+    background-color: #141415;
+    border-color: #141415;
+}
+
+.btn-outline-primary {
+    color: #141415;
+    border-color: #141415;
+}
+.main-container{
+    min-height: 500px;
+}
+a{
+    text-decoration: none!important;
+}
+.payment-method .active{
+    border: 3px solid #a2262e;
+}
+
+.payment-method div{
+    border: 3px solid #ffffff;
+}
+
+.payment-method div:hover{
+    border: 3px solid #a2262e;
+}
+
+.my-btn{
+    background-color: #a2262e;
+    color:white;
+    border:2px solid #a2262e;
+}
+
+.my-btn:hover{
+    background-color: #ffffff;
+    color:#a2262e;
+    border:2px solid #a2262e;
+}
+
+.my-body{
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+.my-card{
+    border: 2px solid #bdbaba;
+    border-radius: 1rem;
+}
+
+.my-card:hover{
+    background-color: #fff6f7;
+    border: 2px solid #a2262e;
+}
+#search-results{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#search-results li{
+    padding: 3px 0 3px 1rem;
+}
+.input-group-append{
+    margin-left: -40px;
+    z-index: 10;
+}
+.input-group-append span{
+    border-radius: 1rem;
+}
+.input-group input{
+    border-radius: 1rem;
+}
+
+/*  --------- ribbon code---------------*/
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  section {
+    margin: 0 auto; 
+    max-width: 660px;
+    padding: 0 20px;
+  }
+  h1 {
+    font-weight: normal;
+    position: relative;
+    background: #F4F9FA;
+    width: 50%;
+    color: #F8463F;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 20px auto 40px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  h1:before, 
+  h1:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    border: 18px solid #DCF4F4;
+  }
+  h1:before {
+    left: -36px;
+    border-right-width: 18px;
+    border-left-color: transparent;
+  }
+  h1:after {
+    right: -36px;
+    border-left-width: 18px;
+    border-right-color: transparent;
+  }
+  h1 span:before, 
+  h1 span:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: #A7CECC transparent transparent transparent;
+    top: -6px;
+    transform: rotate(180deg);
+  }
+  h1 span:before {
+    left: 0;
+    border-width: 6px 0 0 6px;
+  }
+  h1 span:after {
+    right: 0;
+    border-width: 6px 6px 0 0;
+  }
+  .ribbon {
+    height: 240px;
+    position: relative;
+    margin-bottom: 30px;
+    background: url(https://html5book.ru/wp-content/uploads/2015/10/snow-road.jpg);
+    background-size: cover;
+    text-transform: uppercase;
+    color: white;
+  }
+  .wrap {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    overflow: hidden;
+  }
+  .wrap:before, .wrap:after {
+    content: ""; 
+    position: absolute;
+  }
+  .wrap:before {
+    width: 40px;
+    height: 8px;
+    right: 100px;
+    background: #4D6530;
+    border-radius: 8px 8px 0px 0px;
+  }
+  .wrap:after {
+    width: 8px;
+    height: 40px;
+    right: 0px;
+    top: 100px;
+    background: #4D6530;
+    border-radius: 0px 8px 8px 0px;
+  }
+  .ribbon6 {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 30px;
+    right: -50px;
+    z-index: 2;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px dashed;
+    box-shadow:0 0 0 3px #57DD43,  0px 21px 5px -18px rgba(0,0,0,0.6);
+    background: #57DD43;
+    text-align: center;
+  }
+  @media (min-width: 500px) {
+    .ribbon {
+      /* width: 48%; */
+    }
+  }
