@@ -86,6 +86,9 @@
                 <img src="https://www.tango.me/images/2bd93e33c07344370027-logo-ssl.svg" alt="">
             </div>
           </div>
+          <div class="col-12 text-center my-2">
+            <span class="text-small text-secondary">Powered By - Ashu Live Agency</span>
+          </div>
         </div>
       </footer>  
 
