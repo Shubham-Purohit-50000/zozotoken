@@ -22,7 +22,7 @@
         <input type="hidden" name="_token" value="{!!csrf_token()!!}">
     </form>
     <!-- razorpay patment end code -->
-    <div class="container">
+    <div class="container"> 
         <div class="row">
             <div class="col-12 col-md-6 mx-auto">
                 <div class="card">
