@@ -56,6 +56,8 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $request->session()->put('user', $user);
             return redirect('/')->with('success','You have Successfully loggedin');
         }
   
@@ -67,6 +69,7 @@ class LoginController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'phone' => 'required',
             'password' => 'required|string|same:c_password|min:8',
             'c_password' => 'required',
         ]); 

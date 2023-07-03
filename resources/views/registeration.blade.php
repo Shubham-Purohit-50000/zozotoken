@@ -22,6 +22,12 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <input type="phone" name="phone" class="form-control" placeholder="Phone">
+                    @error('phone')
+                        <span class="text-danger">* {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <input type="password" name="password" class="form-control" placeholder="Password">
                     @error('password')
                         <span class="text-danger">* {{$message}}</span>

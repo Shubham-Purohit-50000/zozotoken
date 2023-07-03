@@ -4,9 +4,6 @@
     <script src="{{asset('js/custom.js')}}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
   @endsection
-  @php
-      $user = Session::get('user');
-  @endphp
     <!-- razorpay patment code -->
     <form action="{!!route('payment')!!}" method="POST" id="payment_form" class="d-none">
         <script src="https://checkout.razorpay.com/v1/checkout.js"
@@ -15,8 +12,8 @@
                 data-buttontext="Pay {{($coin->amount - $coin->discount)*100}} INR"
                 data-name="zozotoken"
                 data-description="Payment"                             
-                data-prefill.name="{{$user->name}}"
-                data-prefill.email="{{$user->email}}"
+                data-prefill.name="name"
+                data-prefill.email="email"
                 data-theme.color="#a2262e"
                 id="myScript">
         </script>
@@ -26,36 +23,8 @@
     </form>
     <!-- razorpay patment end code -->
     <div class="container">
-        <div class="row my-2">
-            <div class="col-12 col-md-6 text-center">
-                <img src="{{asset('images/gift-box.png')}}" alt="" class="">
-                <h2 class="font-weight-bold">Gift Box</h2>
-            </div>
-            <div class="col-12 col-md-6 card p-3">
-                <h3><strong>[{{$coin->coin}}] Gift Zozo Token</strong></h3>
-                <hr>
-                <p><strong>₹ {{$coin->amount - $coin->discount}}</strong> @if($coin->discount > 0)<del>₹ {{$coin->amount}}</del>@endif</p>
-                <h4>Description :</h4>
-                <p>
-                    Whether you choose to indulge in the mystery yourself or present it as a gift to someone special, the Mysterious Gift Box promises to captivate and enthrall. It's a testament to the power of curiosity and the joy of embracing the unknown. Unveil the secrets, unlock the magic, and embrace the allure of the Mysterious Gift Box – an extraordinary experience awaits.
-                </p>
-                <div>
-                    <button class="btn btn-lg my-btn" onclick="razorpay()">Buy</button>
-                </div>
-                <div class="my-3">
-                    <h4>Billing Details</h4>
-                    <ul>
-                        <li><strong>Product Id</strong> : {{$coin->uuid}}</li>
-                        <li><strong>Name</strong> : {{$user->username}}</li>
-                        <li><strong>Email</strong> : {{$user->email}}</li>
-                        <li><strong>Phone</strong> : {{$user->phone}}</li>
-                    </ul>
-                    <p>Free Delivery, All taxes are included</p>
-                    <small>Delivery time : 7 to 10 Days</small>
-                    <a href="https://wa.me/918890620896" target="_blank" class="p-2  text-white rounded" style="background:#28a617;"><span><i class="fa fa-whatsapp" aria-hidden="true"></i> For any queries</span></a>
-                </div>
-            </div>
-            <div class="col-12 mx-auto d-none">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">

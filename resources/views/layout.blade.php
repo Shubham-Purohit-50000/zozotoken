@@ -20,13 +20,23 @@
       <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">ZOZO TOKEN</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <div class="px-2 text-white">
+          <a href="{{url('about-gift-box')}}" class="text-white mx-2" target="_blank">About Gift Box</a>
           @if($user = Session::get('user'))
           <span class="mr-2">Token {{$user->token}}</span>
-          <img src="https://www.zozolive.com/images/{{$user->profile_image}}" alt="" style="width:45px;" class="rounded-circle"> 
-          {{$user->email}} 
+          <img src="https://www.zozolive.com/images/{{$user->profile_image}}" alt="" style="width:45px;" class="rounded-circle">  
+          <div class="dropdown d-inline">
+            <span href="dropdown" class="dropdown-toggle" type="button" data-toggle="dropdown">{{$user->email}}
+            <span class="caret"></span></span>
+            <ul class="dropdown-menu px-2">
+              <li><small>{{$user->username}}</small></li>
+              <li><small>{{$user->phone}}</small></li>
+            </ul>
+          </div>
+          <a href="{{url('my-order', ['user_id'=>$user->uuid])}}" class="text-white py-1 px-2 border rounded mx-2">My Order</a>
           <a href="{{url('logout')}}" class="text-white py-1 px-2 border rounded mx-2">Logout</a>
           @else 
             <a href="{{url('login')}}" class="text-white py-1 px-2 border rounded mx-2">Login</a>
+            <a href="{{url('registeration')}}" class="text-white py-1 px-2 border rounded mx-2">Registeration</a>
           @endif
         </div>
       </nav>
@@ -49,6 +59,10 @@
     <div class="main-container">
         @yield('containt')
     </div>
+
+    <a href="https://wa.me/918890620896" class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+    </a>
 
     <footer class="pt-5 px-5 border-top">
         <div class="row">

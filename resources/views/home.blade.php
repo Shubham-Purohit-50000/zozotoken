@@ -4,6 +4,7 @@
     <script src="{{asset('js/custom.js')}}"></script>
   @endsection
     <div class="row">
+      @if($user = !Session::get('user') and 0)
         <div class="col-12">
           <form action="{{url('user/login')}}" method="post" id="search-form">
             @csrf
@@ -19,9 +20,24 @@
 
           </form>
         </div>
-        <div class="col-4 my-auto text-">
+      @endif
+        @if($user = Session::get('user'))
+        <div class="col-12 text-center">
+            <h4>Welcome [ {{$user->email}} ]</h4>
+            <span class="d-none">Buy token and have fun!</span>
+        </div>
+        @endif
+        <div class="col-12 p-3">
+          <p class="p-3">
+            Introducing our captivating and enigmatic Mysterious Gift Box, a truly exceptional offering designed to ignite intrigue and fascination. Perfect for those seeking an extraordinary experience or searching for a gift that transcends the ordinary, this box promises an unforgettable journey into the unknown.
+          </p>
+          <p class="p-3">
+            Each Mysterious Gift Box is meticulously crafted and meticulously curated, guaranteeing an aura of anticipation and surprise. The contents within are shrouded in secrecy, ensuring an element of mystery and enchantment with every unveiling. Our team of expert artisans and creators meticulously handpick an assortment of captivating items from around the world, guaranteeing an exquisite blend of rarity, uniqueness, and charm.
+          </p>
+        </div>
+        <div class="col-4 my-auto">
             <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
-                <h2 class="-4"><strong>Get Tokens</strong></h2>
+                <h2 class="-4"><strong>Buy Gift Box</strong></h2>
                 <!-- <p class="lead">to support broadcasters</p> -->
             </div>
         </div>
@@ -74,7 +90,7 @@
                     <strong class="text-dark">{{$coin->coin}}</strong>
                 </h5>
                 <div>
-                    <img src="https://cget.tango.me/contentserver/download/YKf5PQAA3Egw8vDtTOpkMw/X5v2GYQx" alt="" class="w-50">
+                    <img src="{{asset('images/gift-box.png')}}" alt="" class="w-50">
                 </div>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li><strong class="text-dark">₹ {{$coin->amount - $coin->discount}}</strong></li>
@@ -94,6 +110,18 @@
         @endforeach
 
       </div>
+
+      <div class="row my-5">
+        @for ($i=1;$i<=6;$i++)
+        <div class="col-xs-6 col-sm-3 col-md-2">
+          @php
+            $image_path = "gift-card-$i.png";
+          @endphp
+          <img src="{{asset('images/'.$image_path)}}" alt="" class="w-100">
+        </div>
+        @endfor
+      </div>
+
     </div>
     <script>
       $('.call_modal').click(function(){

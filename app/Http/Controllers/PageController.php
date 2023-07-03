@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Coin;
+use App\Models\Recharge;
 
 class PageController extends Controller
 {
@@ -49,6 +50,23 @@ class PageController extends Controller
     public function paymentPage(Request $request)
     {   $coin = Coin::where('uuid', $request->coin_id)->first();
         return view('payment')->with('coin',$coin);
+    }
+
+    public function myOrder($user_id){
+        $recharges = Recharge::where('user_id', $user_id)->latest()->get();
+        //dd($recharges);
+        return view('my-order')->with(['recharges'=>$recharges]);
+    }
+
+    public function cancelOrder(Request $req){
+        $rec = Recharge::where('uuid', $req->recharge_id)->first();
+        $rec->dummy_status = 2;
+        $rec->update();
+        return back()->with('success', 'Order canceled!');
+    }
+
+    public function aboutGiftBox(){
+        return view('about-gift-box');
     }
 
 }

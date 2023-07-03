@@ -49,3 +49,9 @@ Route::post('post-registration', [LoginController::class, 'postRegistration']);
 
 Route::get('logout', [LoginController::class, 'logout']);
 
+Route::get('my-order/{user_id}', [PageController::class, 'myOrder']);
+
+Route::post('cancel/order', [PageController::class, 'cancelOrder']);
+
+Route::get('about-gift-box', [PageController::class, 'aboutGiftBox']);
+
