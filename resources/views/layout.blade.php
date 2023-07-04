@@ -84,13 +84,14 @@
           <div class="col-6 col-md">
             <h5 class="text-white">Important Links</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="/refund-policy">refund-policy</a></li>
+              <li><a class="text-muted" href="/refund-and-cancellation">refund-and-cancellation</a></li>
               <li><a class="text-muted" href="/about-us">about-us</a></li>
               <li><a class="text-muted" href="/contact-us">contact-us</a></li>
-              <li><a class="text-muted" href="/term-of-use">term-of-use</a></li>
+              <li><a class="text-muted" href="/terms-and-conditions">terms-and-conditions</a></li>
               <li><a class="text-muted" href="/cookies-policy">cookies-policy</a></li>
               <li class="d-none"><a class="text-muted" href="/faq">faq</a></li>
               <li><a class="text-muted" href="/privacy-policy">privacy-policy</a></li>
+              <li><a class="text-muted" href="/delivery-and-shipping-policy">delivery-and-shipping-policy</a></li>
             </ul>
             <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
                 <img src="https://www.tango.me/images/f3baf965605ea8098dd9-logo-visa.svg" alt="">

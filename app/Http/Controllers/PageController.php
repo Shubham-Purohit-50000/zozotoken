@@ -15,7 +15,7 @@ class PageController extends Controller
     }
 
     public function refundPolicy(){
-        return view('refund-policy');
+        return view('refund-and-cancellation');
     }
 
     public function aboutUs(){
@@ -27,7 +27,7 @@ class PageController extends Controller
     }
 
     public function termOfUse(){
-        return view('term-of-use');
+        return view('terms-and-conditions');
     }
 
     public function cookiesPolicy(){
@@ -67,6 +67,10 @@ class PageController extends Controller
 
     public function aboutGiftBox(){
         return view('about-gift-box');
+    }
+
+    public function deliveryShipping() {
+        return view('delivery-and-shipping-policy');
     }
 
 }
