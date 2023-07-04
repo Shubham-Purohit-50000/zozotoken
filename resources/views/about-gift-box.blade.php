@@ -12,6 +12,11 @@
         </div>
         @endfor
     </div>
+    <div class="my-4">
+        <div>
+            <img src="{{asset('images/gift-box.png')}}" style="width:400px; float:left">
+        </div>
+        <strong>Our gift box can includes gadgets, stationary, office, decoration related items</strong>.</div>
     <p>
         Gift box make people feel special....
     </p>

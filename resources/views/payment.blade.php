@@ -38,6 +38,7 @@
                 <h4>Description :</h4>
                 <p>
                     Whether you choose to indulge in the mystery yourself or present it as a gift to someone special, the Mysterious Gift Box promises to captivate and enthrall. It's a testament to the power of curiosity and the joy of embracing the unknown. Unveil the secrets, unlock the magic, and embrace the allure of the Mysterious Gift Box – an extraordinary experience awaits.
+                    <strong>Our gift box can includes gadgets, stationary, office, decoration related items</strong>.
                 </p>
                 <div>
                     <button class="btn btn-lg my-btn" onclick="razorpay()">Buy</button>

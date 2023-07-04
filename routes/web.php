@@ -18,13 +18,13 @@ use App\Http\Controllers\RazorpayController;
 
 Route::get('/', [PageController::class, 'home']);
 
-Route::get('refund-policy', [PageController::class, 'refundPolicy']);
+Route::get('refund-and-cancellation', [PageController::class, 'refundPolicy']);
 
 Route::get('about-us', [PageController::class, 'aboutUs']);
 
 Route::get('contact-us', [PageController::class, 'contactUs']);
 
-Route::get('term-of-use', [PageController::class, 'termOfUse']);
+Route::get('terms-and-conditions', [PageController::class, 'termOfUse']);
 
 Route::get('cookies-policy', [PageController::class, 'cookiesPolicy']);
 
@@ -55,3 +55,4 @@ Route::post('cancel/order', [PageController::class, 'cancelOrder']);
 
 Route::get('about-gift-box', [PageController::class, 'aboutGiftBox']);
 
+Route::get('delivery-and-shipping-policy', [PageController::class, 'deliveryShipping']);
