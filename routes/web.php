@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RazorpayController;
+use App\Http\Controllers\SabPaisaController;
+use App\Http\Controllers\CcavanueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +58,9 @@ Route::post('cancel/order', [PageController::class, 'cancelOrder']);
 Route::get('about-gift-box', [PageController::class, 'aboutGiftBox']);
 
 Route::get('delivery-and-shipping-policy', [PageController::class, 'deliveryShipping']);
+
+Route::get('sab-paisa/callback', [SabPaisaController::class, 'callback']);
+
+Route::post('ccavanue/payment-request', [CcavanueController::class, 'requestHandler']);
+
+Route::get('ccavanue/payment-response', [CcavanueController::class, 'responseHandler']);

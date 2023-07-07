@@ -78,6 +78,7 @@ class LoginController extends Controller
         $user = $this->create($data);
         if($user){
             Auth::login($user);
+            $request->session()->put('user', $user);
             return redirect('/')->with('success','User register successfully!');
         }
         return redirect('/')->with('error','Something wrong! please try again later.');
@@ -87,7 +88,9 @@ class LoginController extends Controller
     {
       return User::create([
         'name' => $data['name'],
+        'username' => $data['name'],
         'email' => $data['email'],
+        'phone' => $data['phone'],
         'password' => Hash::make($data['password'])
       ]);
     }
