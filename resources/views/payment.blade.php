@@ -33,7 +33,7 @@
     <!-- razorpay patment end code -->
     <!-- SabPaisa payment code start -->
     <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post" id="sab_paisa_payment_form">
-        <input type="hidden" name="encData" value="2619418" id="frm1">
+        <input type="hidden" name="encData" value="{{$sab_paisa_data}}" id="frm1">
         <input type="hidden" name="clientCode" value ="{{$sab_paisa_clientCode}}" id="frm2">
         <input type="submit" id="sabpaisa-payment-button" name="submit">
     </form>
@@ -41,7 +41,7 @@
     <!-- code for ccavanue payment gateway start -->
     <form action="{{url('ccavanue/payment-request')}}" method="post" id="ccavanue_payment_form">
         <input type="text" name="tid" id="tid">
-        <input type="hidden" name="merchant_id" value="{{$user->uuid}}">
+        <input type="hidden" name="merchant_id" value="2619418">
         <input type="hidden" name="order_id" value="123654789">
         <input type="hidden" name="amount" value="1">
         <input type="hidden" name="currency" value="INR">
