@@ -33,7 +33,7 @@
     <!-- razorpay patment end code -->
     <!-- SabPaisa payment code start -->
     <form action="https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post" id="sab_paisa_payment_form">
-        <input type="hidden" name="encData" value="{{$sab_paisa_data}}" id="frm1">
+        <input type="hidden" name="encData" value="2619418" id="frm1">
         <input type="hidden" name="clientCode" value ="{{$sab_paisa_clientCode}}" id="frm2">
         <input type="submit" id="sabpaisa-payment-button" name="submit">
     </form>
