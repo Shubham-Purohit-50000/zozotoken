@@ -59,11 +59,11 @@ class PageController extends Controller
         /******************** code for SabPaisa Start************************** */
         $encData=null;
 
-        $clientCode='NITE5';
-        $username='Ish988@sp';
-        $password='wF2F0io7gdNj';
-        $authKey='zvMzY0UZLxkiE6ad';
-        $authIV='iFwrtsCSw3j7HG15';
+        $clientCode='ZOZO88';
+        $username='zozotokenpayment_10207';
+        $password='ZOZO88_SP10207';
+        $authKey='SPlby3lGnEwsTgew';
+        $authIV='f6TELIMWbA0ajGR5';
 
         $payerName='YUVRAJ MISHRA';
         $payerEmail='Test@sabpaisa.in';
@@ -71,9 +71,9 @@ class PageController extends Controller
         $payerAddress='Patna, Bihar';
 
         $clientTxnId=rand(1000,9999);
-        $amount=100;
+        $amount=1;
         $amountType='INR';
-        $mcc=5137;
+        $mcc=18385;
         $channelId='W';
         $callbackUrl = $url."/sab-paisa/callback";
         // Extra Parameter you can use 20 extra parameters(udf1 to udf20)

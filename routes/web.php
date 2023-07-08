@@ -59,7 +59,7 @@ Route::get('about-gift-box', [PageController::class, 'aboutGiftBox']);
 
 Route::get('delivery-and-shipping-policy', [PageController::class, 'deliveryShipping']);
 
-Route::get('sab-paisa/callback', [SabPaisaController::class, 'callback']);
+Route::post('sab-paisa/callback', [SabPaisaController::class, 'callback']);
 
 Route::post('ccavanue/payment-request', [CcavanueController::class, 'requestHandler']);
 
