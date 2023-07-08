@@ -12,10 +12,14 @@ use Log;
 class SabPaisaController extends Controller
 {
     public function callback(Request $request){
+
+        Log::info('request in call back');
+        Log::info($request->all());
+
         $query = $request->encResponse;
 
-        $authKey = 'zvMzY0UZLxkiE6ad';
-        $authIV = 'iFwrtsCSw3j7HG15';
+        $authKey = 'SPlby3lGnEwsTgew';
+        $authIV = 'f6TELIMWbA0ajGR5';
 
         $decText = null;
         $AesCipher = new AesCipher();
