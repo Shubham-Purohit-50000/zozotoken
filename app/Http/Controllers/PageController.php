@@ -8,6 +8,7 @@ use App\Models\Coin;
 use App\Models\Recharge;
 use App\SabPaisa\AesCipher;
 use Session;
+use Log;
 
 class PageController extends Controller
 {
