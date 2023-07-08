@@ -76,6 +76,8 @@ class PageController extends Controller
         $mcc=18385;
         $channelId='W';
         $callbackUrl = $url."/sab-paisa/callback";
+
+        Log::info('callback url : '. $url);
         // Extra Parameter you can use 20 extra parameters(udf1 to udf20)
         //$Class='VIII';
         //$Roll='1008';
