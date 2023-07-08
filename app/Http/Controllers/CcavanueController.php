@@ -38,7 +38,7 @@ class CcavanueController extends Controller
 
         Log::info($request->all());
         error_reporting(0);
-	
+
         $workingKey='84E14B872BD9FA908CC8F74A958CD642';		//Working Key should be provided here.
         $encResponse=$request->encResp;	
         $helper_class = new HelperClass();		//This is the response sent by the CCAvenue Server
