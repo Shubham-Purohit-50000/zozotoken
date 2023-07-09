@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Session;
 use Hash;
+use Log;
 
 class LoginController extends Controller
 {
@@ -37,6 +38,25 @@ class LoginController extends Controller
             return back()->withError('Oppes! You have entered invalid credentials');   
         }  
    
+    }
+
+    public function directLogin(Request $request){
+
+        Log::info($request->all());
+
+        $request->validate([
+            'email' => 'required',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (filled($user)) {
+            $request->session()->put('user', $user);
+            return redirect('/')->with('You have Successfully loggedin');
+        }
+        else {    
+            return back()->withError('Oppes! You have entered invalid credentials');   
+        }  
     }
 
     public function login(){

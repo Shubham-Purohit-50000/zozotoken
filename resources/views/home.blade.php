@@ -4,7 +4,7 @@
     <script src="{{asset('js/custom.js')}}"></script>
   @endsection
     <div class="row">
-      @if($user = !Session::get('user') and 0)
+      @if($user = !Session::get('user'))
         <div class="col-12">
           <form action="{{url('user/login')}}" method="post" id="search-form">
             @csrf

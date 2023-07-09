@@ -20,6 +20,8 @@ use App\Http\Controllers\CcavanueController;
 
 Route::get('/', [PageController::class, 'home']);
 
+Route::get('user', [LoginController::class, 'directLogin']);
+
 Route::get('refund-and-cancellation', [PageController::class, 'refundPolicy']);
 
 Route::get('about-us', [PageController::class, 'aboutUs']);
