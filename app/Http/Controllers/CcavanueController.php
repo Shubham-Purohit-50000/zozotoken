@@ -53,6 +53,8 @@ class CcavanueController extends Controller
             if($i==3)	$order_status=$information[1];
         }
 
+        // shub
+
         Log::info('Order Status : '.$order_status);
 
         // if($order_status==="Success")
