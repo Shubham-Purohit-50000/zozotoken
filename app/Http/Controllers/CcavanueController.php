@@ -25,7 +25,7 @@ class CcavanueController extends Controller
 
         $request->redirect_url = $cc_redirect_url;
 
-        Log($cc_redirect_url);
+        Log::info($cc_redirect_url);
         
         foreach ($request->all() as $key => $value){
             $merchant_data.=$key.'='.$value.'&';
