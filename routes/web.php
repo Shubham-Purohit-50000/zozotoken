@@ -65,4 +65,4 @@ Route::post('sab-paisa/callback', [SabPaisaController::class, 'callback']);
 
 Route::post('ccavanue/payment-request', [CcavanueController::class, 'requestHandler']);
 
-Route::get('ccavanue/payment-response', [CcavanueController::class, 'responseHandler']);
+Route::post('ccavanue/payment-response', [CcavanueController::class, 'responseHandler']);

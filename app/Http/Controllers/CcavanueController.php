@@ -21,7 +21,11 @@ class CcavanueController extends Controller
 	    $working_key='84E14B872BD9FA908CC8F74A958CD642';//Shared by CCAVENUES
 	    $access_code='AVFN84KG65AH57NFHA';//Shared by CCAVENUES
 
-        $request->redirect_url = url('/').'/ccavanue/payment-response';
+        $cc_redirect_url = url('/').'/ccavanue/payment-response';
+
+        $request->redirect_url = $cc_redirect_url;
+
+        Log($cc_redirect_url);
         
         foreach ($request->all() as $key => $value){
             $merchant_data.=$key.'='.$value.'&';
