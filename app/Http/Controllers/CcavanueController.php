@@ -47,6 +47,9 @@ class CcavanueController extends Controller
         $decryptValues=explode('&', $rcvdString);
         $dataSize=sizeof($decryptValues);
 
+        Log::info('ccavanue dec-response');
+        Log::info($decryptValues);
+
         for($i = 0; $i < $dataSize; $i++) 
         {
             $information=explode('=',$decryptValues[$i]);

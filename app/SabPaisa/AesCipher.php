@@ -32,13 +32,14 @@ class AesCipher {
     
     static function decrypt($key,$iv, $data) {
      
-        $parts = explode(':', $data); 
+        $parts = explode(':', $data);
         Log::info('part at 37 in AesChiper');  
-        Log::info($parts);                //Separate Encrypted data from iv.
+        Log::info($parts);              //Separate Encrypted data from iv.
         $encrypted = $parts[0];
         $iv = $parts[1];
         $decryptedData = openssl_decrypt(base64_decode($encrypted), AesCipher::OPENSSL_CIPHER_NAME, AesCipher::fixKey($key), OPENSSL_RAW_DATA, base64_decode($iv));
         return $decryptedData;
+
     }
     
 }
