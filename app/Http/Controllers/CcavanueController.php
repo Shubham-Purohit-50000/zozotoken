@@ -13,7 +13,7 @@ use App\Http\Helpers\HelperClass;
 class CcavanueController extends Controller
 {
     public function requestHandler(Request $request)
-    {    
+    {
         //dd($request->all());
         error_reporting(0);
 	
