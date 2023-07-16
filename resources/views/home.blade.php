@@ -8,14 +8,14 @@
         <div class="col-12">
           <form action="{{url('user/login')}}" method="post" id="search-form">
             @csrf
-            <div class="input-group mb-3 mx-auto" style="width:400px">
+            <div class="input-group mb-3 mx-auto" style="width:300px">
               <input type="text" id="search-input" name="email" autocomplete="off" class="form-control" placeholder="Search Your Email Here" aria-label="Recipient's username" aria-describedby="basic-addon2" style="border-radius: 1rem;">
               <div class="input-group-append">
                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
               </div>
             </div>
-            <div class="mx-auto" style="width:400px;position:relative;">
-              <ul id="search-results" class="mx-auto" style="z-index:10;position: absolute;"></ul>
+            <div class="mx-auto" style="width:300px;position:relative;">
+              <ul id="search-results" class="mx-auto" style="z-index:10;position: absolute;background: #e9ecef;padding: 0 4rem;"></ul>
             </div>
 
           </form>
@@ -24,20 +24,17 @@
         @if($user = Session::get('user'))
         <div class="col-12 text-center">
             <h4>Welcome [ {{$user->email}} ]</h4>
-            <span class="d-none">Buy token and have fun!</span>
+            <span>Buy token and have fun!</span>
         </div>
         @endif
         <div class="col-12 p-3">
           <p class="p-3">
-            Introducing our captivating and enigmatic Mysterious Gift Box, a truly exceptional offering designed to ignite intrigue and fascination. Perfect for those seeking an extraordinary experience or searching for a gift that transcends the ordinary, this box promises an unforgettable journey into the unknown.
-          </p>
-          <p class="p-3">
-            Each Mysterious Gift Box is meticulously crafted and meticulously curated, guaranteeing an aura of anticipation and surprise. The contents within are shrouded in secrecy, ensuring an element of mystery and enchantment with every unveiling. Our team of expert artisans and creators meticulously handpick an assortment of captivating items from around the world, guaranteeing an exquisite blend of rarity, uniqueness, and charm.
+            Each Mysterious Gift Box is meticulously crafted and meticulously curated, guaranteeing an aura of anticipation and surprise. You get token.
           </p>
         </div>
         <div class="col-4 my-auto">
             <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
-                <h2 class="-4"><strong>Buy Gift Box</strong></h2>
+                <h5><strong>Buy Gift Box</strong></h5>
                 <!-- <p class="lead">to support broadcasters</p> -->
             </div>
         </div>

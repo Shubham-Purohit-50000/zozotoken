@@ -229,3 +229,15 @@ body {
       /* width: 48%; */
     }
   }
+
+  @media (max-width: 400px) {
+    .my-body{
+      margin-top: 2.5rem;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .my-body{
+      margin-top: 2.5rem;
+    }
+  }

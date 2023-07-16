@@ -20,7 +20,7 @@
       <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">ZOZO TOKEN</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <div class="px-2 text-white">
-          <a href="{{url('about-gift-box')}}" class="text-white mx-2" target="_blank">About Gift Box</a>
+          <a href="{{url('about-gift-box')}}" class="text-white mx-2" target="_blank" style="border-right: 2px solid;padding-right: 1rem;">Gift Box</a>
           @if($user = Session::get('user'))
           <span class="mr-2">Token {{$user->token}}</span>
           <img src="https://www.zozolive.com/images/{{$user->profile_image}}" alt="" style="width:45px;" class="rounded-circle">  
@@ -30,9 +30,10 @@
             <ul class="dropdown-menu px-2">
               <li><small>{{$user->username}}</small></li>
               <li><small>{{$user->phone}}</small></li>
+              <li><small><a href="{{url('my-order', ['user_id'=>$user->uuid])}}" class="text-dark">My Order</a></small></li>
             </ul>
           </div>
-          <a href="{{url('my-order', ['user_id'=>$user->uuid])}}" class="text-white py-1 px-2 border rounded mx-2">My Order</a>
+          <!-- <a href="{{url('my-order', ['user_id'=>$user->uuid])}}" class="text-white py-1 px-2 border rounded mx-2">My Order</a> -->
           <a href="{{url('logout')}}" class="text-white py-1 px-2 border rounded mx-2">Logout</a>
           @else 
             <a href="{{url('login')}}" class="text-white py-1 px-2 border rounded mx-2">Login</a>
@@ -66,11 +67,11 @@
 
     <footer class="pt-5 px-5 border-top">
         <div class="row">
-          <div class="col-12 col-md">
+          <div class="col-12 col-md-3">
             <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">ZOZO TOKEN</a></h5>
             <small class="d-block mb-3 text-muted">© {{date('Y')}}</small>
           </div>
-          <div class="col-6 col-md text-muted">
+          <div class="col-6 col-md text-muted d-none">
             <h5 class="text-white">About</h5>
             <ul class="list-unstyled text-small">
               <li><p>Address : Ajad nagar, back side of sunder wan, nawalgarh road, sikar, Rajasthan 332001</p></li>
@@ -101,7 +102,7 @@
                 <img src="https://www.tango.me/images/2bd93e33c07344370027-logo-ssl.svg" alt="">
             </div>
           </div>
-          <div class="col-12 text-center my-2">
+          <div class="col-12 text-center my-2 d-none">
             <span class="text-small text-secondary">Powered By - Ashu Live Agency</span>
           </div>
         </div>

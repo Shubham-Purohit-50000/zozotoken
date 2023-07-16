@@ -66,33 +66,34 @@ class PageController extends Controller
         $authKey='SPlby3lGnEwsTgew';
         $authIV='f6TELIMWbA0ajGR5';
 
-        $payerName='YUVRAJ MISHRA';
-        $payerEmail='Test@sabpaisa.in';
-        $payerMobile='9988776655';
-        $payerAddress='Patna, Bihar';
+        $payerName=$user->name;
+        $payerEmail=$user->email;
+        $payerMobile='8107224909';
+        $payerAddress=null;
 
         $clientTxnId=rand(1000,9999);
-        $amount=1;
+        $amount=($coin->amount - $coin->discount);
         $amountType='INR';
         $mcc=18385;
         $channelId='W';
         $callbackUrl = $url."/sab-paisa/callback";
 
-        Log::info('callback url : '. $url);
         // Extra Parameter you can use 20 extra parameters(udf1 to udf20)
-        //$Class='VIII';
-        //$Roll='1008';
+        $user_id=$user->uuid;
+        $coin_id=$request->coin_id;
+        $coin_count=$coin->coin;
+
+        Log::info("$user_id , $coin_id");
 
         $encData="?clientCode=".$clientCode."&transUserName=".$username."&transUserPassword=".$password."&payerName=".$payerName.
         "&payerMobile=".$payerMobile."&payerEmail=".$payerEmail."&payerAddress=".$payerAddress."&clientTxnId=".$clientTxnId.
-        "&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl;
-        //."&udf1=".$Class."&udf2=".$Roll;
+        "&amount=".$amount."&amountType=".$amountType."&mcc=".$mcc."&channelId=".$channelId."&callbackUrl=".$callbackUrl
+        ."&udf1=".$user_id."&udf2=".$coin_id."&udf3=".$coin_count;
                         
-        $AesCipher = new AesCipher(); 
+        $AesCipher = new AesCipher();
         $sab_paisa_data = $AesCipher->encrypt($authKey, $authIV, $encData);
 
         /******************** code for SabPaisa End************************** */
-
         return view('payment')->with(['coin'=>$coin, 'sab_paisa_data'=>$sab_paisa_data, 'sab_paisa_clientCode'=>$clientCode]);
     }
 

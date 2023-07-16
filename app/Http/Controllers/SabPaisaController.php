@@ -8,13 +8,12 @@ use App\Models\Coin;
 use App\Models\Recharge;
 use App\SabPaisa\AesCipher;
 use Log;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class SabPaisaController extends Controller
 {
     public function callback(Request $request){
-
-        Log::info('request in call back');
-        Log::info($request->all());
 
         $query = $request->encResponse;
 
@@ -24,10 +23,10 @@ class SabPaisaController extends Controller
         $decText = null;
         $AesCipher = new AesCipher();
         $decText = $AesCipher -> decrypt($authKey, $authIV, $query); 
-        echo $decText;
 
         $token = strtok($decText,"&");
 
+        Log::info('29 shubham pareek');
         Log::info($token);
 
         $i=0;
@@ -50,10 +49,9 @@ class SabPaisaController extends Controller
             $token=strtok("&");
             $fstr=ltrim($token1,"=");
 
-            //echo "i-". $i . '='. $fstr;
-            //echo '<br>';
+            Log::info("i = ". $i);
+            Log::info($fstr);
 
-            //echo $fstr;
             if($i==2)
                 $payerEmail=$fstr;
             if($i==3)
@@ -77,32 +75,69 @@ class SabPaisaController extends Controller
             if($i==12)
                 $status=$fstr;  
             if($i==13)
-                    $statusCode=$fstr; 
+                $statusCode=$fstr; 
             if($i==14)
-                    $challanNumber=$fstr;
+                $challanNumber=$fstr;
             if($i==15)
-                    $sabpaisaTxnId=$fstr;
+                $sabpaisaTxnId=$fstr;
             if($i==16)
-                    $sabpaisaMessage=$fstr;
+                $sabpaisaMessage=$fstr;
             if($i==17)
-                    $bankMessage=$fstr;
+                $bankMessage=$fstr;
             if($i==18)
-                    $bankErrorCode=$fstr;
+                $bankErrorCode=$fstr;
             if($i==19)
-                    $sabpaisaErrorCode=$fstr;
+                $sabpaisaErrorCode=$fstr;
             if($i==20)
-                    $bankTxnId=$fstr;				
+                $bankTxnId=$fstr;				
             if($i==21)
                 $transDate=$fstr;
-
+            if($i==22)
+                $user_id=$fstr;
+            if($i==23)
+                $coin_id=$fstr;
+            if($i==24)
+                $coin=$fstr;
             if($token == true)
             {
             // $up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status='1' WHERE student_id='$userid'";
                 //$up = "UPDATE  buy_now SET txid='$pgTxnId', tx_dt='$transDate', status=1 WHERE student_id=$ufd20";
                 // echo $up;
             //  mysqli_query($conn,$up);
-                
             }
         }
+
+        Log::info('105 sabpaisa');
+
+        $user = User::where('uuid', $user_id)->first();
+        $request->session()->put('user', $user);
+        Auth::login($user);
+
+        if($status == 'SUCCESS' or 1){
+            $recharge = Recharge::create([
+                'user_id'=> $user_id,
+                'amount' => $amount,
+                'amount_paid' => $paidAmount,
+                'coin_id' => $coin_id,
+                'coin' => $coin,
+                'type' => 'online',
+                'payment_gateway' => 'Sabpaisa',
+                'status' => $status,
+                'order_id'=>$sabpaisaTxnId,
+            ]);
+
+            $token = $user->token + $coin;
+            $user->token = $token;
+            $user->update();
+
+            $pay_status = 'success';
+            $msg = 'Transaction successfull, Token updated!';
+        }else{
+            $pay_status = 'error';
+            $msg = 'Transaction Failure, Try again!';
+        }
+
+        return redirect('/')->with($pay_status, $msg);
+
     }
 }

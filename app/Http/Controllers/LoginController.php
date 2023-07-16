@@ -32,6 +32,7 @@ class LoginController extends Controller
 
         if (filled($user)) {
             $request->session()->put('user', $user);
+            Auth::login($user);
             return redirect('/')->with('You have Successfully loggedin');
         }
         else {    

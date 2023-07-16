@@ -3,12 +3,12 @@
   @section('extra-files')
     <script src="{{asset('js/custom.js')}}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script>
+    <!-- <script>
         window.onload = function() {
             var d = new Date().getTime();
             document.getElementById("tid").value = d;
         };
-    </script>
+    </script> -->
   @endsection
   @php
       $user = Session::get('user');
@@ -35,18 +35,19 @@
     <form action="https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1" method="post" id="sab_paisa_payment_form">
         <input type="hidden" name="encData" value="{{$sab_paisa_data}}" id="frm1">
         <input type="hidden" name="clientCode" value ="{{$sab_paisa_clientCode}}" id="frm2">
-        <input type="submit" id="sabpaisa-payment-button" name="submit">
+        <input type="submit" id="sabpaisa-payment-button" name="submit" class="d-none">
     </form>
     <!-- SabPaisa payment code end -->
     <!-- code for ccavanue payment gateway start -->
     <form action="{{url('ccavanue/payment-request')}}" method="post" id="ccavanue_payment_form">
-        <input type="text" name="tid" id="tid">
+        <input type="hidden" name="tid" id="tid">
         <input type="hidden" name="merchant_id" value="2619418">
-        <input type="hidden" name="order_id" value="123654789">
-        <input type="hidden" name="amount" value="1">
+        <input type="hidden" name="amount" value="{{($coin->amount - $coin->discount)}}">
+        <input type="hidden" name="actual_amount" value="{{($coin->amount)}}">
         <input type="hidden" name="currency" value="INR">
         <input type="hidden" name="user_id" value="{{Session::get('user')->uuid}}">
         <input type="hidden" name="coin_id" value="{{$coin->uuid}}">
+        <input type="hidden" name="coin" value="{{$coin->coin}}">
         <input type="hidden" name="_token" value="{!!csrf_token()!!}">
     </form>
     <!-- code for ccavanue payment gateway end -->
@@ -132,5 +133,9 @@
             console.log('ccavanue');
             $('#ccavanue_payment_form').submit();
         }
+
+        //code to set tnx id
+        var d = new Date().getTime();
+        document.getElementById("tid").value = d;
     </script>
 @endsection
