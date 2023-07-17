@@ -113,7 +113,7 @@ class SabPaisaController extends Controller
         $request->session()->put('user', $user);
         Auth::login($user);
 
-        if($status == 'SUCCESS' or 1){
+        if($status == 'SUCCESS'){
             $recharge = Recharge::create([
                 'user_id'=> $user_id,
                 'amount' => $amount,
