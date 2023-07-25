@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RazorpayController;
 use App\Http\Controllers\SabPaisaController;
 use App\Http\Controllers\CcavanueController;
+use App\Models\Visit;
 
 /*
 |--------------------------------------------------------------------------
