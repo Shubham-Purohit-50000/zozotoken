@@ -55,7 +55,7 @@
     <div class="container">
         <div class="row my-2">
             <div class="col-12 col-md-6 text-center">
-                <img src="{{asset('images/gift-box.png')}}" alt="" class="">
+                <img src="{{asset('images/gift-box.png')}}" alt="" class="w-100">
                 <h2 class="font-weight-bold">Gift Box</h2>
             </div>
             <div class="col-12 col-md-6 card p-3">
@@ -68,9 +68,8 @@
                     <strong>Our gift box can includes gadgets, stationary, office, decoration related items</strong>.
                 </p>
                 <div>
-                    <button class="btn btn-lg my-btn" onclick="sab_paisa()">Buy with sub-paisa</button>
-                    <button class="btn btn-lg my-btn" onclick="ccavanue()">Buy with ccavanue</button>
-                    
+                    <button class="btn btn-lg my-btn my-1" onclick="ccavanue()">Buy with ccavanue</button>
+                    <button class="btn btn-lg my-solid-btn my-1" onclick="sab_paisa()">Buy with sub-paisa</button>
                 </div>
                 <div class="my-3">
                     <h4>Billing Details</h4>
@@ -82,7 +81,7 @@
                     </ul>
                     <p>Free Delivery, All taxes are included</p>
                     <small>Delivery time : 7 to 10 Days</small>
-                    <a href="https://wa.me/918890620896" target="_blank" class="p-2  text-white rounded" style="background:#28a617;"><span><i class="fa fa-whatsapp" aria-hidden="true"></i> For any queries</span></a>
+                    <a href="https://wa.me/919004539476?text=Hello!%20My%20Zozotoken%20user%20Mail%20ID%20is%20shub@gmail.com.%20I'd%20like%20to%20know%20the%20discount%20you%20can%20provide%20if%20I%20top%20up%20via%20you." target="_blank" class="p-2  text-white rounded" style="background:#28a617;"><span><i class="fa fa-whatsapp" aria-hidden="true"></i> For any queries</span></a>
                 </div>
             </div>
             <div class="col-12 mx-auto d-none">

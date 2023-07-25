@@ -32,17 +32,15 @@
             Each Mysterious Gift Box is meticulously crafted and meticulously curated, guaranteeing an aura of anticipation and surprise. You get token.
           </p>
         </div>
-        <div class="col-4 my-auto">
+        <div class="col-6 col-md-4 my-auto">
             <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
                 <h5><strong>Buy Gift Box</strong></h5>
                 <!-- <p class="lead">to support broadcasters</p> -->
             </div>
         </div>
-        <div class="col-8 my-auto">
+        <div class="col-6 col-md-3 my-auto">
           <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
-                <img src="https://www.tango.me/images/f3baf965605ea8098dd9-logo-visa.svg" alt="">
-                <img src="https://www.tango.me/images/7308ad0ca674cb19ce10-logo-mastercard.svg" alt="">
-                <img src="https://www.tango.me/images/69f534b04c09e0ba13b0-logo-discover.svg" alt="">
+                <img src="{{asset('images/pay-methods.png')}}" style="width:100%">
             </div>
         </div>
     </div>

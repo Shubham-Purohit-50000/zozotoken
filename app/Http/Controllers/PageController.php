@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Coin;
 use App\Models\Recharge;
+use App\Models\Visit;
 use App\SabPaisa\AesCipher;
 use Session;
 use Log;
@@ -52,6 +53,11 @@ class PageController extends Controller
 
     public function paymentPage(Request $request)
     {   
+        $visit = Visit::where('page', 'zozotoken-payment')->first();
+        $visit->count++;
+        $visit->update();
+        Log::info('payment page visited : '.$visit->count);
+
         $url = url('/');
 
         $coin = Coin::where('uuid', $request->coin_id)->first();

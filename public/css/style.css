@@ -60,6 +60,16 @@ a{
     color:#a2262e;
     border:2px solid #a2262e;
 }
+.my-solid-btn{
+  background-color: white;
+  color:#a2262e;
+  border:2px solid #a2262e;
+}
+.my-solid-btn:hover{
+  background-color: #a2262e;
+  color:#fff;
+  border:2px solid #a2262e;
+}
 
 .my-body{
     margin-top: 2rem;

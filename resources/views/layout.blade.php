@@ -95,11 +95,7 @@
               <li><a class="text-muted" href="/delivery-and-shipping-policy">delivery-and-shipping-policy</a></li>
             </ul>
             <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4">
-                <img src="https://www.tango.me/images/f3baf965605ea8098dd9-logo-visa.svg" alt="">
-                <img src="https://www.tango.me/images/7308ad0ca674cb19ce10-logo-mastercard.svg" alt="">
-                <img src="https://www.tango.me/images/ad33c5d3b6d9706d8881-logo-ae.svg" alt="">
-                <img src="https://www.tango.me/images/69f534b04c09e0ba13b0-logo-discover.svg" alt="">
-                <img src="https://www.tango.me/images/2bd93e33c07344370027-logo-ssl.svg" alt="">
+              <img src="{{asset('images/pay-methods.png')}}" style="width:200px">
             </div>
           </div>
           <div class="col-12 text-center my-2 d-none">
