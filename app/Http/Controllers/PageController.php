@@ -51,6 +51,11 @@ class PageController extends Controller
         return response()->json($emails);
     }
 
+    function sanitizeName($name) {
+        $sanitizedName = preg_replace('/[^A-Za-z]/', '', $name);
+        return $sanitizedName;
+    }
+
     public function paymentPage(Request $request)
     {   
         $visit = Visit::where('page', 'zozotoken-payment')->first();
@@ -72,7 +77,7 @@ class PageController extends Controller
         $authKey='SPlby3lGnEwsTgew';
         $authIV='f6TELIMWbA0ajGR5';
 
-        $payerName=$user->name;
+        $payerName=$this->sanitizeName($user->name);
         $payerEmail=$user->email;
         $payerMobile='8107224909';
         $payerAddress=null;
