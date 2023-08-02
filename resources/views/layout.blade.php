@@ -20,9 +20,11 @@
       <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">ZOZO TOKEN</a></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <div class="px-2 text-white">
-          <a href="{{url('about-gift-box')}}" class="text-white mx-2" target="_blank" style="border-right: 2px solid;padding-right: 1rem;">Gift Box</a>
+          <a href="{{url('about-gift-box')}}" class="text-white mx-2 d-none" target="_blank" style="border-right: 2px solid;padding-right: 1rem;">Gift Box</a>
           @if($user = Session::get('user'))
-          <span class="mr-2">Token {{$user->token}}</span>
+          <span class="mr-2">Token {{$user->token}} 
+            <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: initial;height:15px;width:15px;"fill="none" viewBox="0 0 12 12" class="uSYgE"><path fill="#FFD200" fill-rule="evenodd" d="M6 12A6 6 0 1 0 6 0a6 6 0 0 0 0 12Z" clip-rule="evenodd"></path><path fill="#FFE749" fill-rule="evenodd" d="M6 10.125a4.125 4.125 0 1 0 0-8.25 4.125 4.125 0 0 0 0 8.25Z" clip-rule="evenodd"></path><path fill="#FEBE43" fill-rule="evenodd" d="M6.14 7.68a.3.3 0 0 0-.28 0l-1.211.637a.3.3 0 0 1-.435-.316l.231-1.35a.3.3 0 0 0-.086-.265l-.98-.955a.3.3 0 0 1 .166-.512l1.354-.197a.3.3 0 0 0 .226-.164l.606-1.228a.3.3 0 0 1 .538 0l.606 1.228a.3.3 0 0 0 .226.164l1.355.197a.3.3 0 0 1 .166.512l-.98.955a.3.3 0 0 0-.087.266L7.787 8a.3.3 0 0 1-.436.316L6.14 7.68Z" clip-rule="evenodd"></path></svg>
+          </span>
           <img src="https://www.zozolive.com/images/{{$user->profile_image}}" alt="" style="width:45px;" class="rounded-circle">  
           <div class="dropdown d-inline">
             <span href="dropdown" class="dropdown-toggle" type="button" data-toggle="dropdown">{{$user->email}}
@@ -61,7 +63,7 @@
         @yield('containt')
     </div>
 
-    <a href="https://wa.me/918890620896" class="float" target="_blank">
+    <a href="https://wa.me/919004539476" class="float" target="_blank">
       <i class="fa fa-whatsapp my-float"></i>
     </a>
 

@@ -23,7 +23,7 @@
       @endif
         @if($user = Session::get('user'))
         <div class="col-12 text-center">
-            <h4>Welcome [ {{$user->email}} ]</h4>
+            <h5>Welcome <br> [ {{$user->email}} ]</h5>
             <span>Buy token and have fun!</span>
         </div>
         @endif

@@ -55,33 +55,32 @@
     <div class="container">
         <div class="row my-2">
             <div class="col-12 col-md-6 text-center">
-                <img src="{{asset('images/gift-box.png')}}" alt="" class="w-100">
+                <img src="{{asset('images/gift-box.png')}}" alt="" class="w-75">
                 <h2 class="font-weight-bold">Gift Box</h2>
             </div>
             <div class="col-12 col-md-6 card p-3">
                 <h3><strong>[{{$coin->coin}}] Gift Zozo Token</strong></h3>
                 <hr>
                 <p><strong>₹ {{$coin->amount - $coin->discount}}</strong> @if($coin->discount > 0)<del>₹ {{$coin->amount}}</del>@endif</p>
-                <h4>Description :</h4>
-                <p>
-                    Whether you choose to indulge in the mystery yourself or present it as a gift to someone special, the Mysterious Gift Box promises to captivate and enthrall. It's a testament to the power of curiosity and the joy of embracing the unknown. Unveil the secrets, unlock the magic, and embrace the allure of the Mysterious Gift Box – an extraordinary experience awaits.
-                    <strong>Our gift box can includes gadgets, stationary, office, decoration related items</strong>.
-                </p>
                 <div>
                     <button class="btn btn-lg my-btn my-1" onclick="ccavanue()">Buy with ccavanue</button>
                     <button class="btn btn-lg my-solid-btn my-1" onclick="sab_paisa()">Buy with sub-paisa</button>
                 </div>
+                <h4 class="mt-2">Description :</h4>
+                <p>
+                    Whether you choose to indulge in the mystery yourself or present it as a gift to someone special, the Mysterious Gift Box promises to captivate and enthrall. It's a testament to the power of curiosity and the joy of embracing the unknown. Unveil the secrets, unlock the magic, and embrace the allure of the Mysterious Gift Box – an extraordinary experience awaits.
+                    <strong>Our gift box can includes gadgets, stationary, office, decoration related items</strong>.
+                </p>
                 <div class="my-3">
                     <h4>Billing Details</h4>
                     <ul>
                         <li><strong>Product Id</strong> : {{$coin->uuid}}</li>
                         <li><strong>Name</strong> : {{$user->username}}</li>
                         <li><strong>Email</strong> : {{$user->email}}</li>
-                        <li><strong>Phone</strong> : {{$user->phone}}</li>
                     </ul>
                     <p>Free Delivery, All taxes are included</p>
-                    <small>Delivery time : 7 to 10 Days</small>
-                    <a href="https://wa.me/919004539476?text=Hello!%20My%20Zozotoken%20user%20Mail%20ID%20is%20shub@gmail.com.%20I'd%20like%20to%20know%20the%20discount%20you%20can%20provide%20if%20I%20top%20up%20via%20you." target="_blank" class="p-2  text-white rounded" style="background:#28a617;"><span><i class="fa fa-whatsapp" aria-hidden="true"></i> For any queries</span></a>
+                    <small>Offline Purchase</small>
+                    <a href="https://wa.me/919004539476?text=Hello!%20My%20Zozotoken%20user%20Mail%20ID%20is%20{{$user->email}}.%20I'd%20like%20to%20know%20the%20discount%20you%20can%20provide%20if%20I%20top%20up%20via%20you." target="_blank" class="p-2  text-white rounded" style="background:#28a617;"><span><i class="fa fa-whatsapp" aria-hidden="true"></i> For any queries</span></a>
                 </div>
             </div>
             <div class="col-12 mx-auto d-none">
