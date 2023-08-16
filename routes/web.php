@@ -68,8 +68,6 @@ Route::post('ccavanue/payment-request', [CcavanueController::class, 'requestHand
 
 Route::post('ccavanue/payment-response', [CcavanueController::class, 'responseHandler']);
 
-Route::get('visiter/count', function () {
-    $visit = Visit::where('page', 'zozotoken-payment')->first();
-    return "Visited Payment Page : ".$visit->count;
-});
+Route::get('visiter/count', [PageController::class, 'visiters']);
 
+Route::get('visiter/delete', [PageController::class, 'visitersDelete']);

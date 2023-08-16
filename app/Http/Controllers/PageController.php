@@ -10,6 +10,7 @@ use App\Models\Visit;
 use App\SabPaisa\AesCipher;
 use Session;
 use Log;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -57,11 +58,21 @@ class PageController extends Controller
     }
 
     public function paymentPage(Request $request)
-    {   
-        $visit = Visit::where('page', 'zozotoken-payment')->first();
-        $visit->count++;
-        $visit->update();
-        Log::info('payment page visited : '.$visit->count);
+    {   // Get the current date
+        $today = Carbon::today();
+    
+        // Retrieve today's records from the visitors table
+        $visit = Visit::where('page', 'zozotoken-payment')->whereDate('created_at', $today)->first();
+
+        if(filled($visit)){
+            $visit->count++;
+            $visit->update();
+        }else{
+            Visit::create([
+                'page' => 'zozotoken-payment',
+                'count' => 1,
+            ]);
+        }
 
         $url = url('/');
 
@@ -127,6 +138,40 @@ class PageController extends Controller
 
     public function deliveryShipping() {
         return view('delivery-and-shipping-policy');
+    }
+
+    public function visiters() {
+        $visit = Visit::where('page', 'zozotoken-payment')->latest()->take(10)->get();
+        $html = '<style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>';
+        $html .= '<table style="width:100%">
+                    <tr>
+                    <th>Count</th>
+                    <th>Date</th>
+                    </tr>';
+        foreach($visit as $item){
+            $html .= '<tr>
+                        <td>'.$item->count.'</td>
+                        <td>'.$item->created_at.'</td>
+                    </tr>';
+        }
+
+        $html .= '</table>';
+        return $html;
+    }
+
+    public function visitersDelete(){
+        $today = Carbon::today();
+    
+        // Retrieve today's records from the visitors table
+        $visit = Visit::where('page', 'zozotoken-payment')->whereDate('created_at', $today)->first();
+
+        $visit->delete();
+
+        return "Today visiter count deleted!";
     }
 
 }
